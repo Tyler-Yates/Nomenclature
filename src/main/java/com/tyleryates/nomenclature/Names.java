@@ -5,6 +5,9 @@ import com.google.common.collect.ImmutableList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Contains the pre-defined parts of a name.
+ */
 final class Names {
     private static final List<String> prefixes;
     private static final List<String> middles;

@@ -9,6 +9,9 @@ import static com.tyleryates.nomenclature.NamePart.MIDDLE;
 import static com.tyleryates.nomenclature.NamePart.PREFIX;
 import static com.tyleryates.nomenclature.NamePart.SUFFIX;
 
+/**
+ * Class used to generate names.
+ */
 public class NameGenerator {
     private static final List<List<NamePart>> nameTypes;
     private static final Random random = new Random();
@@ -22,6 +25,11 @@ public class NameGenerator {
         nameTypes.add(Arrays.asList(PREFIX, SUFFIX));
     }
 
+    /**
+     * Generates and returns a single name.
+     *
+     * @return a name
+     */
     public static String generateName() {
         final List<NamePart> nameType = nameTypes.get(random.nextInt(nameTypes.size()));
         final StringBuilder name = new StringBuilder();
@@ -31,6 +39,12 @@ public class NameGenerator {
         return name.toString();
     }
 
+    /**
+     * Prints generated names to {@code StdIn}. The first argument can be a number, indicating how many names to
+     * print out. If no argument is provided, only one name will be printed.
+     *
+     * @param args (optional) the number of names to print out
+     */
     public static void main(String[] args) {
         if (args.length == 1) {
             final int numNames = Integer.parseInt(args[0]);
